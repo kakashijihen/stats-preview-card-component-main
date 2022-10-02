@@ -40,7 +40,6 @@ main {
 }
 
 .card {
-  border: 1px solid wheat;
   width: 320px;
   border-radius: 10px;
   overflow: hidden;
