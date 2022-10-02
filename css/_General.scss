@@ -1,0 +1,38 @@
+@use 'Variables' as *;
+@use 'mixins' as *;
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 15px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: $Verydarkblue;
+    font-family: $Inter;
+   
+}
+main{
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    @include minview(768px){
+        margin-left: 10.4rem;
+        margin-right: 10.4rem;
+    }
+    
+}
+.attribution { 
+    font-size: 11px;
+    text-align: center;
+    color: $White;
+    a { @include txtopacity($Softviolet, 0.75)  }
+}

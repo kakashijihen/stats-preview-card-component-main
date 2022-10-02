@@ -1,0 +1,101 @@
+@use 'Variables' as *;
+@use 'mixins' as *;
+
+.card{
+    border: 1px solid wheat;
+    width: 320px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: $Darkdesaturatedblue;
+    @include minview(768px){
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 397px;
+    }
+}
+
+.img-card{
+    aspect-ratio: 1.5/1;
+    background: {
+        image: url('../images/image-header-mobile.jpg');
+        size: cover;
+        color: $Softviolet;
+       blend-mode:soft-light;
+    };
+    @include minview(768px){
+        order: 2;
+        background: {
+            image: url('../images/image-header-desktop.jpg');
+            size: cover;
+            repeat:no-repeat;
+        }
+        width: 48%;
+    }
+}
+
+h1{
+    font-size: 2rem;
+    text-align: center;
+    margin: 2.666667rem 1.333334rem;
+    color: $White;
+    span{
+        color:$Softviolet
+    }
+    @include minview(768px){
+        text-align: left;
+        padding-left: 1rem;
+        font-size: 2.2rem;    
+    }
+}
+
+.main-paragraph{
+    font-family: $Inter;
+    margin: 0 1.75rem 3rem;
+    text-align: center;
+    @include txtopacity($White,0.6);
+    line-height: 1.25;
+    @include minview(768px){
+        text-align: left; 
+        font-size: 1.15rem;
+        margin: 0 1.45rem 3rem;
+    }
+}
+
+.overviews {
+    list-style: none;
+    @include col;
+    li{
+        font-family: "Lexend Deca", sans-serif;   
+        @include col;
+        margin-bottom: 2.4rem;
+        @include minview(768px){
+            align-items: flex-start;
+            margin-right: 4.2rem;
+        }
+    }
+    &_number{
+        font-size: 1.4rem;
+        font-family: $Inter;
+        font-weight: 700;
+        color:$White;
+        line-height: 2;
+    }
+    &_stat{
+        text-transform: uppercase;
+        @include txtopacity($White,0.6);
+        font-size: 0.8rem;        
+    }
+    @include minview(768px){
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-left: 1.666667rem;
+    }
+    
+}
+
+
+
+
+
+

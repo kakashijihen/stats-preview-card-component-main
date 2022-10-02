@@ -1,0 +1,16 @@
+@mixin col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin minview($medida: 480px){
+    @media screen and (min-width: $medida){
+        @content;
+    }
+}
+
+@mixin txtopacity($color, $opacity) {
+    color:  rgba($color: $color, $alpha: $opacity);
+}
